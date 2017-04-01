@@ -4,12 +4,14 @@ Code to consume the json from provided url and output a list of all the cats in 
 
 ## Scripts
 
+
 ```bash
 
 git clone 'https://github.com/mahesh-k-s/agl-test.git'
-or
+                    or
 download the zip and extract to a folder/server
 
+# from the project root folder run below scripts
 
 # install node modules 
 npm install
