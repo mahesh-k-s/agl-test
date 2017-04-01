@@ -12,7 +12,6 @@ export class CatOwners {
 
     init() {
         this.config.targetNode = document.getElementById("pets");
-        const self = this;
         return Promise.resolve()
         .then(this.fetchData)
         .then(data => this.processData(data)) 
@@ -36,7 +35,7 @@ export class CatOwners {
     }
 
     listAllCatsByGender (data) {
-        
+        if (data == undefined) return;
         var sortedCatsList = {
             "male" : this.getAllCats(data.filter(subitem => subitem.gender === 'Male')),
             "female" : this.getAllCats(data.filter(subitem => subitem.gender === 'Female'))
@@ -45,7 +44,7 @@ export class CatOwners {
     }
 
     getAllCats (filtereddata) {
-        var self = this;
+        if (filtereddata == undefined) return [];
         var sortList = [];
         filtereddata.map(item => {
           var catArr =  (item.pets || []).filter(pet => pet.type === 'Cat');
@@ -58,6 +57,7 @@ export class CatOwners {
     }
 
     drawResultantList (data) {
+        if (data == undefined) return;
         this.config.targetNode.innerHTML = [
             ...this.drawOutput(data.male,'MALE'),
             ...this.drawOutput(data.female,'FEMALE')
@@ -65,8 +65,9 @@ export class CatOwners {
     }
 
     drawOutput (data, type) {
+        if (data == undefined) return [`<h2>No Cats For ${type}</h2>`];
         const liNodes = data.map(item => {
-           return  [`<li></span>${item.name}</li>`]
+           return  [`<li>${item.name}</li>`]
         })
         
         return [
