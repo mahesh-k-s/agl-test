@@ -17,6 +17,16 @@ describe("CatOwners", function() {
     })
   })
 
+  describe('fetchData', function() {
+    it('should fetch data from the api', function() {
+      const result = catOwners.fetchData()
+      expect(result).toEqual(jasmine.any(Object))
+      expect(result.length).toBeGreaterThan(1);
+    })
+  
+  })
+
+
   describe('listAllCatsByGender', function() {
     it('should list all male and female cats array', function() {
       const result = catOwners.processData(data)
