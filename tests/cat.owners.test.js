@@ -17,14 +17,7 @@ describe("CatOwners", function() {
     })
   })
 
-  describe('fetchData', function() {
-    it('should fetch data from the api', function() {
-      const result = catOwners.fetchData()
-      expect(result).toEqual(jasmine.any(Object))
-      expect(result.length).toBeGreaterThan(1);
-    })
   
-  })
 
 
   describe('listAllCatsByGender', function() {
