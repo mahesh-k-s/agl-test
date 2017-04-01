@@ -44,14 +44,8 @@ The server does not support Cross Origin Resource Sharing (CORS), therefore the 
 FAILED: Failed to fetch
 ```
 
-To fix this, start Google Chrome with disabled web-security using the following command:
+To fix this, start Google Chrome with disabled web-security using the following command from windows command terminal:
 
-### In MAC
-```bash
-open -a "Google Chrome" --args --user-data-dir --disable-web-security
-```
-
-### In Windows
 ```bash
 start chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
 ```
