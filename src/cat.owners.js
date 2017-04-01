@@ -1,4 +1,4 @@
-import './styles/cat.owner.css';
+import './styles/cat.owner.css'; 
 
 const APIURL = "http://agl-developer-test.azurewebsites.net/people.json";
 

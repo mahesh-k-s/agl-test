@@ -1,3 +1,16 @@
 body {
-    font-family:  Verdana, Geneva, Tahoma, sans-serif
+    font-family:  Verdana, Geneva, Tahoma, sans-serif;
+    color: steelblue;
+    background-color: beige;
 }
+h2{
+    color: orange;
+}
+div#pets {
+  margin: 1em;
+}
+ul {
+  list-style: none;
+  line-height: 2em;
+}
+
