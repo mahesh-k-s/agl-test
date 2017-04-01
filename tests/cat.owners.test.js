@@ -16,9 +16,30 @@ describe("CatOwners", function() {
       }) 
     })
   })
-
   
 
+  describe('fetchData', function() {
+    let apiUrl = "testurl.api.com";
+    let window = {};
+      beforeEach(function () {
+        window = {
+          fetch: function(apiUrl) {
+            return {};
+          }
+        };
+      })
+
+    it('should call window.fetch function and get data from api', function () {
+      spyOn(window,'fetch').and.callThrough();
+      window.fetch(apiUrl);
+      catOwners.fetchData();
+
+      expect(window).toBeDefined();
+      expect(window.fetch).toHaveBeenCalled();
+      expect(window.fetch).toHaveBeenCalledWith(apiUrl);
+      
+    })
+  })
 
   describe('listAllCatsByGender', function() {
     it('should list all male and female cats array', function() {
@@ -30,6 +51,11 @@ describe("CatOwners", function() {
       ]);
       expect(result.male.length).toBeGreaterThan(1);
       expect(result.female.length).toBeGreaterThan(1);
+    })
+
+    it('should return if data is undefined', function() {
+      const result = catOwners.processData(undefined)
+      expect(result).toBe(undefined)
     })
   
   })
@@ -60,6 +86,11 @@ describe("CatOwners", function() {
       expect(result).toEqual(jasmine.any(Object))
       expect(result.length).toBeGreaterThan(1);
     })
+
+    it('should return an empty array if data is undefined', function() {
+      const result = catOwners.getAllCats(undefined)
+       expect(result).toEqual(jasmine.any(Object))
+    })
   
   })
 
@@ -74,10 +105,23 @@ describe("CatOwners", function() {
             "name": "Tom",
             "type": "Cat"
           }
-        ])
-
+        ],'MALE')
+        
+      expect(result).toBeDefined();
       expect(result).toEqual(jasmine.any(Object));
       expect(result.length).toBeGreaterThan(1);
+      expect(result[0]).toEqual('<h2>MALE</h2>')
+      expect(result[1]).toEqual('<ul>')
+      expect(result[2]).toEqual(['<li>Garfield</li>'])
+      expect(result[3]).toEqual(['<li>Tom</li>'])
+      expect(result[4]).toEqual('</ul>')
+    })
+
+    it('should return "No Cats For Male" message if data is undefined', function() {
+      const result = catOwners.drawOutput(undefined,'Male')
+
+       expect(result).toEqual(jasmine.any(Object))
+       expect(result[0]).toEqual('<h2>No Cats For Male</h2>')
     })
 
   })
