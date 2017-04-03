@@ -25,7 +25,7 @@
     "karma-chrome-launcher": "^2.0.0",
     "karma-jasmine": "^1.1.0",
     "karma-webpack": "^2.0.3",
-    "karma-spec-reporter": "^0.0.30"
+    "karma-spec-reporter": "^0.0.30",
     "webpack-dev-server": "^2.4.2",
     "webpack": "^2.3.2"
   },
