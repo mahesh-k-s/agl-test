@@ -28,7 +28,6 @@ npm run build
 
 ```
 
-
 ## Running the tests
 ```bash
 
@@ -48,5 +47,13 @@ npm test
 ## Output
 
 ![alt tag](https://github.com/mahesh-k-s/agl-test/blob/master/assets/output-screenshot.png)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Related Topics
+
+Same project has been developed using stack Vue.js in github [AGL Test Code - Cat Owners developed in VueJS](https://github.com/mahesh-k-s/agl-test-vuejs)
 
 
