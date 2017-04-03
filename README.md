@@ -17,13 +17,13 @@ download the zip and extract to a local directory
 
 ```bash
 
-# install node modules 
+# install dependencies 
 npm install
 
-# run the project.(Make sure you open a webbrowser with web security disabled, so project with auto-render to that browser)
+# serve with hot reload at localhost:3000.(Make sure you open a webbrowser with web security disabled, so project with auto-render to that browser)
 npm start
 
-# create build in dist folder
+# build for production with minification
 npm run build
 
 ```
@@ -31,7 +31,7 @@ npm run build
 ## Running the tests
 ```bash
 
-# runs the test suites
+# run unit tests
 npm test
 
 ```
