@@ -15,7 +15,7 @@ git clone 'https://github.com/mahesh-k-s/agl-test.git'
 # install node modules 
 npm install
 
-# run the project 
+# run the project.(Make sure you open a webbrowser with web security disabled, so project with auto-render to that browser)
 npm start
 
 # runs the test suites
@@ -38,22 +38,4 @@ npm run build
 
 ![alt tag](https://github.com/mahesh-k-s/agl-test/blob/master/assets/output-screenshot.png)
 
-## Known Issue
 
-The server does not support Cross Origin Resource Sharing (CORS), therefore the below error may be shown:
-
-```bash
-FAILED: Failed to fetch
-```
-
-To fix this, start Google Chrome with disabled web-security using the following command from windows command terminal:
-
-### In Windows
-```bash
-start chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
-```
-
-### In Mac
-```bash
-open -a "Google Chrome" --args --user-data-dir --disable-web-security
-```
