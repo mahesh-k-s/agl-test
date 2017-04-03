@@ -1,22 +1,21 @@
 # AGL Coding Test
 
-Code to consume the json from provided url and output a list of all the cats in alphabetical order under a heading of the gender of their owner.
+This is a project to consume the json from provided url (http://agl-developer-test.azurewebsites.net/people.json) and output a list of all the cats in alphabetical order under a heading of the gender of their owner by using JavaScript.
 
 ## Scripts
 
 
 ```bash
-
+# clone the project
 git clone 'https://github.com/mahesh-k-s/agl-test.git'
-                    or
-download the zip and extract to a folder/server
 
-# from the project root folder run below scripts
+# or
+# download the zip and extract to a folder/server
 
 # install node modules 
 npm install
 
-# runs the project in a new window
+# run the project 
 npm start
 
 # runs the test suites
@@ -46,6 +45,12 @@ FAILED: Failed to fetch
 
 To fix this, start Google Chrome with disabled web-security using the following command from windows command terminal:
 
+### In Windows
 ```bash
 start chrome.exe --user-data-dir="C:/Chrome dev session" --disable-web-security
+```
+
+### In Mac
+```bash
+open -a "Google Chrome" --args --user-data-dir --disable-web-security
 ```
