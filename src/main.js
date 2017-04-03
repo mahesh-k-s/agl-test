@@ -1,6 +1,7 @@
-import { CatOwners } from './cat.owners';
+import { CatApp } from './cat.app';
 
-var catOwners = new CatOwners();
+// instantiating CatApp
+const catApp = new CatApp();
 
-catOwners.init();
+catApp.init();
 
