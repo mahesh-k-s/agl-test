@@ -11,14 +11,12 @@ describe("CatApp", function () {
 
   describe('init', function () {
     it('should get the dom element with id "pets" as the target node', function () {
-
       catApp.init().then(function () {
         document.getElementById('pets').innerHTML = "test";
         expect(document.getElementById('pets').innerHTML).toBe("test")
       })
     })
   })
-
 
   describe('fetchData', function () {
     let apiUrl = "testurl.api.com";
@@ -27,6 +25,9 @@ describe("CatApp", function () {
       window = {
         fetch: function (apiUrl) {
           return {};
+        },
+        fetchEmptyUrl: function () {
+           return {};
         }
       };
     })
@@ -39,6 +40,17 @@ describe("CatApp", function () {
       expect(window).toBeDefined();
       expect(window.fetch).toHaveBeenCalled();
       expect(window.fetch).toHaveBeenCalledWith(apiUrl);
+
+    })
+
+    it('should log error if there is no url passed', function () {
+      spyOn(window, 'fetchEmptyUrl').and.callThrough();
+      window.fetchEmptyUrl();
+
+      catApp.fetchData();
+      expect(window).toBeDefined();
+      expect(window.fetchEmptyUrl).toHaveBeenCalled();
+      expect(window.fetchEmptyUrl).toHaveBeenCalledWith();
 
     })
   })
@@ -60,10 +72,15 @@ describe("CatApp", function () {
       expect(result).toBe(undefined)
     })
 
+    it('should filter data and group by gender type', function () {
+      const result = data.filter(subitem => subitem.gender === 'Male')
+      expect(result[0].gender).toEqual('Male')
+    })
+
   })
 
   describe('getCatsSortedByName', function () {
-    it('should filter all cats from pets sorted by  name', function () {
+    it('should filter all cats from pets', function () {
       const result = catApp.getCatsSortedByName([{
         "name": "Bob",
         "gender": "Male",
@@ -86,7 +103,27 @@ describe("CatApp", function () {
       }
       ])
       expect(result).toEqual(jasmine.any(Object))
-      expect(result.length).toBeGreaterThan(1);
+      expect(result.length).toBeGreaterThan(1)
+    })
+
+    it('should sort all cats by their name', function () {
+      const catList = [
+        {
+          "name": "Garfield",
+          "type": "Cat"
+        },
+        {
+          "name": "Max",
+          "type": "Cat"
+        },
+        {
+          "name": "Jim",
+          "type": "Cat"
+        }
+      ]
+      const result = catList.sort(function (a, b) { return (a.name > b.name) ? 1 : ((b.name > a.name) ? -1 : 0); })
+      expect(result).toEqual(jasmine.any(Object))
+      expect(result.length).toBeGreaterThan(1)
     })
 
     it('should return an empty array if data is undefined', function () {
@@ -94,6 +131,15 @@ describe("CatApp", function () {
       expect(result).toEqual(jasmine.any(Object))
     })
 
+  })
+
+  describe('renderList', function () {
+    
+
+    it('should return if data is undefined', function () {
+      const result = catApp.renderList(undefined)
+      expect(result).toEqual(undefined)
+    })
   })
 
   describe('drawPets', function () {
