@@ -5,9 +5,10 @@ body {
 }
 h2{
     color: orange;
+    font-weight: 100;
 }
 h1{
-  margin:1em;
+  margin:1.5em;
 }
 div#pets {
   margin: 3em;
