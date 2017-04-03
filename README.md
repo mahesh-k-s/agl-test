@@ -34,6 +34,9 @@ npm run build
 - [`Karma`] as the test runner.
 - [`Jasmine`] as testing framework
 
+## Output
+
+![alt tag](https://github.com/mahesh-k-s/agl-test/blob/master/assets/output-screenshot.png)
 
 ## Known Issue
 
