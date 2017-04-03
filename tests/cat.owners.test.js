@@ -95,7 +95,7 @@ describe("CatOwners", function() {
   })
 
   describe('drawOutput', function() {
-    it('should get all cats filtered and sorted', function() {
+    it('should draw output to the target node', function() {
       const result = catOwners.drawOutput([
           {
             "name": "Garfield",
