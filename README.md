@@ -20,7 +20,7 @@ download the zip and extract to a local directory
 # install dependencies 
 npm install
 
-# serve with hot reload at localhost:3000.(Make sure you open a webbrowser with web security disabled, so project with auto-render to that browser)
+# serve with hot reload at localhost:3000.(Make sure you open a webbrowser with web security disabled, so project will auto-render to that browser)
 npm start
 
 # build for production with minification
