@@ -54,6 +54,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Related Topics
 
-Same project has been developed using stack Vue.js in github [AGL Test Code - Cat Owners developed in VueJS](https://github.com/mahesh-k-s/agl-test-vuejs)
+* Same project has been developed using stack Vue.js in github [AGL Test Code - Cat Owners developed in VueJS](https://github.com/mahesh-k-s/agl-test-vuejs)
+* Project on taking screenshot of contents in a html5 container and email it, in iOS and Android devices is build and available in github. [Javascript - screenshot-and-email-web-content](https://github.com/mahesh-k-s/screenshot-and-email-web-content)
 
 
